@@ -1,33 +1,38 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ビジネス向けLP</title>
-    <link rel="stylesheet" href="business.css">
-</head>
-<body>
-    <header>
-        <h1>プロフェッショナルなビジネスソリューション</h1>
-    </header>
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a2e;
+    color: #ffffff;
+    text-align: center;
+}
 
-    <section class="hero">
-        <h2>成功への第一歩をここから</h2>
-        <button class="cta">今すぐ始める</button>
-    </section>
+header {
+    background-color: #16213e;
+    padding: 20px;
+}
 
-    <section class="service">
-        <h2>サービス内容</h2>
-        <p>あなたのビジネスを成功に導くための支援を提供します。</p>
-    </section>
+.hero {
+    background-color: #0f3460;
+    padding: 50px;
+}
 
-    <section class="testimonial">
-        <h2>導入企業の声</h2>
-        <p>「このサービスのおかげで売上が2倍に！」</p>
-    </section>
+.cta {
+    background-color: #f4a261;
+    color: #ffffff;
+    padding: 15px 30px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
 
-    <section class="cta-section">
-        <button class="cta">無料相談する</button>
-    </section>
-</body>
-</html>
+.cta:hover {
+    transform: scale(1.1);
+}
+
+.service, .testimonial {
+    padding: 30px;
+}
+
+.cta-section {
+    padding: 40px;
+}
