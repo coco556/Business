@@ -26,16 +26,16 @@
             <p>お店をピックアップいたしました！</p>
         </section>
 
-        <!-- サービス詳細（左側：特徴 / 右側：詳細説明） -->
+        <!-- サービス詳細（スクロールでスライドイン） -->
         <section class="service-details">
             <div class="service-left">
-                <div class="service-item" data-detail="detail-1">
+                <div class="service-item">
                     <h3>スピーディーな対応</h3>
                 </div>
-                <div class="service-item" data-detail="detail-2">
+                <div class="service-item">
                     <h3>最適な選択肢</h3>
                 </div>
-                <div class="service-item" data-detail="detail-3">
+                <div class="service-item">
                     <h3>コンシェルジュ対応</h3>
                 </div>
             </div>
@@ -61,19 +61,6 @@
             <p>✔ 急な対応依頼にもスピーディーに対応</p>
             <p>✔ 24時間365日、あなたのビジネスを支援</p>
         </section>
-
-        <!-- サービス提供者情報 -->
-        <section class="provider fade-in">
-            <h2>サービス提供者</h2>
-            <div class="provider-box">
-                <img src="https://source.unsplash.com/100x100/?person,portrait" alt="サービス提供者">
-                <div class="provider-info">
-                    <h3>〇〇 〇〇</h3>
-                    <p>BizCompass メンバーとして、このサービスを提供しています。</p>
-                    <p>ビジネスサポートの実績が豊富で、多くの企業の成功を支援。</p>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- フッター -->
@@ -84,16 +71,16 @@
     <script>
         document.addEventListener("scroll", function() {
             document.querySelector("main").classList.add("visible");
-        });
 
-        // サイドスライドインの動作
-        document.querySelectorAll(".service-item").forEach(item => {
-            item.addEventListener("mouseenter", function() {
-                let targetId = this.getAttribute("data-detail");
-                document.querySelectorAll(".service-detail").forEach(detail => {
-                    detail.classList.remove("active");
-                });
-                document.getElementById(targetId).classList.add("active");
+            let serviceDetails = document.querySelectorAll(".service-detail");
+            let scrollPosition = window.scrollY + window.innerHeight;
+
+            serviceDetails.forEach((detail, index) => {
+                let position = detail.getBoundingClientRect().top + window.scrollY;
+                if (scrollPosition > position + 100) {
+                    detail.classList.add("active");
+                    detail.style.transitionDelay = `${index * 0.4}s`; // 順番にスライドイン
+                }
             });
         });
     </script>
