@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LPテンプレート</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+            animation: bounce 1.5s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .service-description {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 1s, transform 1s;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .testimonial {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f8f8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="hero">
+            <h1>キャッチフレーズ</h1>
+            <p>ここに魅力的な説明文が入ります。</p>
+            <div class="cta-button" style="background-color: #007BFF; color: white;">今すぐ申し込む</div>
+        </section>
+        <section class="service-description">
+            <h2>サービス説明</h2>
+            <p>サービスの詳細説明がここに入ります。</p>
+        </section>
+        <section class="testimonial">
+            <h2>実績・使った感想</h2>
+            <p>お客様の声や成功事例を掲載</p>
+        </section>
+        <section class="hero">
+            <div class="cta-button" style="background-color: #FF5733; color: white;">無料相談を申し込む</div>
+        </section>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2025 LPテンプレート</p>
+    </footer>
+    <script>
+        window.addEventListener('scroll', function() {
+            document.querySelectorAll('.service-description').forEach(function(el) {
+                if (el.getBoundingClientRect().top < window.innerHeight - 50) {
+                    el.classList.add('visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
