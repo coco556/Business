@@ -96,9 +96,10 @@ h1 {
 /* フッター */
 footer {
     background: #1a1a1a;
-    padding: 20px;
-    font-size: 0.9em;
+    padding: 15px;
+    font-size: 0.8em;
     text-align: center;
+    color: #bbb;
 }
 
 .footer-text {
