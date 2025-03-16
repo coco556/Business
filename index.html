@@ -5,24 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ビジネス向けLP</title>
     <link rel="stylesheet" href="business.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>プロフェッショナルなビジネスソリューション</h1>
+        <h1 class="fade-in">CASE 01</h1>
+        <p class="sub-title fade-in">職場で</p>
     </header>
 
-    <section class="hero">
-        <h2>成功への第一歩をここから</h2>
-        <button class="cta">今すぐ始める</button>
+    <section class="description fade-in">
+        <h2>レストランなど飲食店の手配</h2>
+        <p>「送別会をするから店の手配よろしく」という上司からの突然の依頼。20人が入れるお店を急に手配なんて！！</p>
     </section>
 
-    <section class="service">
-        <h2>サービス内容</h2>
-        <p>あなたのビジネスを成功に導くための支援を提供します。</p>
+    <section class="highlight fade-in">
+        <p>お店をピックアップいたしました！</p>
     </section>
 
-    <section class="cta-section">
-        <button class="cta">無料相談する</button>
+    <section class="chat fade-in">
+        <h3>ライブチャット</h3>
+        <div class="chat-box">
+            <p><strong>コンシェルジュへのご依頼ですか？</strong><br>商品のご案内、イベントの提案など何なりとお申し付けください。</p>
+            <button class="cta">商品のお問い合わせ</button>
+            <button class="cta">イベントのお問い合わせ</button>
+            <button class="cta">お店のお問い合わせ</button>
+        </div>
     </section>
+
+    <section class="features">
+        <div class="feature fade-in-left">
+            <h3>スピーディーな対応</h3>
+            <p>最短30分でお店を手配！</p>
+        </div>
+        <div class="feature fade-in-left">
+            <h3>最適な選択肢</h3>
+            <p>ご要望に沿った最適なお店をピックアップ</p>
+        </div>
+        <div class="feature fade-in-left">
+            <h3>コンシェルジュ対応</h3>
+            <p>24時間対応のサポートで安心</p>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("scroll", function() {
+            let elements = document.querySelectorAll(".fade-in, .fade-in-left");
+            elements.forEach((el) => {
+                let position = el.getBoundingClientRect().top;
+                let screenHeight = window.innerHeight;
+                if (position < screenHeight - 100) {
+                    el.classList.add("visible");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
