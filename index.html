@@ -9,8 +9,8 @@
 </head>
 <body>
     <header>
-        <h1 class="fade-in">CASE 01</h1>
-        <p class="sub-title fade-in">職場で</p>
+        <h1>CASE 01</h1>
+        <p class="sub-title">職場で</p>
     </header>
 
     <section class="description fade-in">
@@ -22,28 +22,37 @@
         <p>お店をピックアップいたしました！</p>
     </section>
 
-    <section class="service-details fade-in">
-        <div class="service-item">
-            <h3>スピーディーな対応</h3>
-            <p>最短30分でお店を手配！</p>
+    <section class="service-details">
+        <div class="service-left">
+            <div class="service-item" data-detail="detail-1">
+                <h3>スピーディーな対応</h3>
+            </div>
+            <div class="service-item" data-detail="detail-2">
+                <h3>最適な選択肢</h3>
+            </div>
+            <div class="service-item" data-detail="detail-3">
+                <h3>コンシェルジュ対応</h3>
+            </div>
         </div>
-        <div class="service-item">
-            <h3>最適な選択肢</h3>
-            <p>ご要望に沿った最適なお店をピックアップ</p>
-        </div>
-        <div class="service-item">
-            <h3>コンシェルジュ対応</h3>
-            <p>24時間対応のサポートで安心</p>
+        <div class="service-right">
+            <div class="service-detail" id="detail-1">
+                <p>最短30分でお店を手配！</p>
+            </div>
+            <div class="service-detail" id="detail-2">
+                <p>ご要望に沿った最適なお店をピックアップ</p>
+            </div>
+            <div class="service-detail" id="detail-3">
+                <p>24時間対応のサポートで安心</p>
+            </div>
         </div>
     </section>
 
-    <section class="vision fade-in">
-        <h2 id="vision-title">実績</h2>
-        <p id="vision-text">これまでに5000件以上のビジネスサポート実績を誇ります。</p>
-        <button id="toggle-vision">ビジョンを表示</button>
+    <section class="achievement fade-in">
+        <h2>実績</h2>
+        <p>これまでに5000件以上のビジネスサポート実績を誇ります。</p>
     </section>
 
-    <footer class="fade-in">
+    <footer>
         <p>このLPは「ライフコンパス」によって提供されています。</p>
     </footer>
 
@@ -59,20 +68,15 @@
             });
         });
 
-        // 実績⇄ビジョンの切り替え
-        document.getElementById("toggle-vision").addEventListener("click", function() {
-            let title = document.getElementById("vision-title");
-            let text = document.getElementById("vision-text");
-
-            if (title.innerText === "実績") {
-                title.innerText = "ビジョン";
-                text.innerText = "私たちは、すべてのビジネスをよりスマートで効率的にすることを目指しています。";
-                this.innerText = "実績を表示";
-            } else {
-                title.innerText = "実績";
-                text.innerText = "これまでに5000件以上のビジネスサポート実績を誇ります。";
-                this.innerText = "ビジョンを表示";
-            }
+        // サイドスライドインの動作
+        document.querySelectorAll(".service-item").forEach(item => {
+            item.addEventListener("mouseenter", function() {
+                let targetId = this.getAttribute("data-detail");
+                document.querySelectorAll(".service-detail").forEach(detail => {
+                    detail.classList.remove("active");
+                });
+                document.getElementById(targetId).classList.add("active");
+            });
         });
     </script>
 </body>
