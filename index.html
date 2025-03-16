@@ -10,74 +10,46 @@
 <body>
     <header>
         <h1 class="fade-in">CASE 01</h1>
-        <p class="sub-title fade-in">サービス名　例：イベント手配コンシェルジュ</p>
+        <p class="sub-title fade-in">職場で</p>
     </header>
 
     <section class="description fade-in">
-        <h2>サービスの説明　例：レストランなど飲食店の手配</h2>
-        <p>キャッチフレーズ　例：「送別会をするから店の手配よろしく」という上司からの突然の依頼。20人が入れるお店を急に手配なんて！！</p>
+        <h2>レストランなど飲食店の手配</h2>
+        <p>「送別会をするから店の手配よろしく」という上司からの突然の依頼。20人が入れるお店を急に手配なんて！！</p>
     </section>
 
     <section class="highlight fade-in">
-        <p>サービスの利用イメージ　例：お店をピックアップできる！</p>
+        <p>お店をピックアップいたしました！</p>
     </section>
 
-    <section class="chat fade-in">
-        <h3>ライブチャット</h3>
-        <div class="chat-box">
-            <p><strong>コンシェルジュへのご依頼ですか？</strong><br>商品のご案内、イベントの提案など何なりとお申し付けください。</p>
-            <button class="cta">商品のお問い合わせ</button>
-            <button class="cta">イベントのお問い合わせ</button>
-            <button class="cta">お店のお問い合わせ</button>
-        </div>
-    </section>
-
-    <section class="features">
-        <div class="feature fade-in-left">
+    <section class="service-details fade-in">
+        <div class="service-item">
             <h3>スピーディーな対応</h3>
             <p>最短30分でお店を手配！</p>
         </div>
-        <div class="feature fade-in-left">
+        <div class="service-item">
             <h3>最適な選択肢</h3>
             <p>ご要望に沿った最適なお店をピックアップ</p>
         </div>
-        <div class="feature fade-in-left">
+        <div class="service-item">
             <h3>コンシェルジュ対応</h3>
             <p>24時間対応のサポートで安心</p>
         </div>
     </section>
 
-    <!-- 実績 / ビジョン 切り替えセクション -->
-    <section class="achievement fade-in">
-        <h3 id="toggle-title">実績</h3>
-        <p id="toggle-content">これまでに300社以上のビジネスを成功に導き、年間売上増加率150%を達成！</p>
-        <button class="cta switch-btn" onclick="toggleContent()">ビジョンを見る</button>
+    <section class="vision fade-in">
+        <h2 id="vision-title">実績</h2>
+        <p id="vision-text">これまでに5000件以上のビジネスサポート実績を誇ります。</p>
+        <button id="toggle-vision">ビジョンを表示</button>
     </section>
 
-    <!-- LP提供情報 -->
-    <footer>
-        <p>本LPは <strong>ライフコンパス</strong> が提供しています。</p>
+    <footer class="fade-in">
+        <p>このLPは「ライフコンパス」によって提供されています。</p>
     </footer>
 
     <script>
-        function toggleContent() {
-            let title = document.getElementById("toggle-title");
-            let content = document.getElementById("toggle-content");
-            let button = document.querySelector(".switch-btn");
-
-            if (title.textContent === "実績") {
-                title.textContent = "ビジョン";
-                content.textContent = "私たちはテクノロジーとアイデアで、すべてのビジネスが飛躍できる未来を創ります。";
-                button.textContent = "実績を見る";
-            } else {
-                title.textContent = "実績";
-                content.textContent = "これまでに300社以上のビジネスを成功に導き、年間売上増加率150%を達成！";
-                button.textContent = "ビジョンを見る";
-            }
-        }
-
         document.addEventListener("scroll", function() {
-            let elements = document.querySelectorAll(".fade-in, .fade-in-left");
+            let elements = document.querySelectorAll(".fade-in");
             elements.forEach((el) => {
                 let position = el.getBoundingClientRect().top;
                 let screenHeight = window.innerHeight;
@@ -85,6 +57,22 @@
                     el.classList.add("visible");
                 }
             });
+        });
+
+        // 実績⇄ビジョンの切り替え
+        document.getElementById("toggle-vision").addEventListener("click", function() {
+            let title = document.getElementById("vision-title");
+            let text = document.getElementById("vision-text");
+
+            if (title.innerText === "実績") {
+                title.innerText = "ビジョン";
+                text.innerText = "私たちは、すべてのビジネスをよりスマートで効率的にすることを目指しています。";
+                this.innerText = "実績を表示";
+            } else {
+                title.innerText = "実績";
+                text.innerText = "これまでに5000件以上のビジネスサポート実績を誇ります。";
+                this.innerText = "ビジョンを表示";
+            }
         });
     </script>
 </body>
