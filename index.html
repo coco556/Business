@@ -3,84 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ビジネス向けLP</title>
-    <link rel="stylesheet" href="business.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>BizCompass LP</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .hero {
+            background-color: #4A90E2;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .chat-box {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .chat-bubble {
+            background: #4A90E2;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 10px;
+        }
+        .cta-button {
+            background-color: #FF9800;
+            color: white;
+            font-size: 18px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-block;
+            transition: all 0.3s ease-in-out;
+        }
+        .cta-button:hover {
+            background-color: #e68900;
+            transform: scale(1.05);
+        }
+        .footer {
+            margin-top: 20px;
+            color: gray;
+        }
+    </style>
 </head>
 <body>
-    <!-- タイトルセクション（背景動画あり） -->
-    <header>
-        <video autoplay muted loop class="hero-video">
-            <source src="your-video.mp4" type="video/mp4">
-        </video>
-        <div class="hero-overlay"></div>
-        <h1>CASE 01</h1>
-    </header>
+    <div class="container">
+        <div class="hero">
+            <h1>BizCompass</h1>
+            <p>経営者・個人事業主のためのビジネスマッチングコミュニティ</p>
+            <button class="cta-button">コミュニティに参加</button>
+        </div>
+        
+        <div class="chat-box">
+            <p class="chat-bubble">案件を獲得したいです！</p>
+            <p class="chat-bubble">コミュニティで協業したい！</p>
+            <p class="chat-bubble">LP制作をお願いできますか？</p>
+        </div>
 
-    <!-- メインコンテンツ -->
-    <main>
-        <section class="description fade-in">
-            <h2>レストランなど飲食店の手配</h2>
-            <p>「送別会をするから店の手配よろしく」という上司からの突然の依頼。20人が入れるお店を急に手配なんて！！</p>
-        </section>
+        <div class="footer">
+            <p>&copy; 2025 ライフコンパス. All Rights Reserved.</p>
+        </div>
+    </div>
 
-        <section class="highlight fade-in">
-            <p>お店をピックアップいたしました！</p>
-        </section>
-
-        <!-- サービス詳細（スクロールでスライドイン） -->
-        <section class="service-details fade-in">
-            <div class="service-left">
-                <div class="service-item">
-                    <h3>スピーディーな対応</h3>
-                </div>
-                <div class="service-item">
-                    <h3>最適な選択肢</h3>
-                </div>
-                <div class="service-item">
-                    <h3>コンシェルジュ対応</h3>
-                </div>
-            </div>
-            <div class="service-right">
-                <div class="service-detail" id="detail-1">
-                    <p>最短30分でお店を手配！急な依頼にも対応し、スムーズな予約を実現します。</p>
-                </div>
-                <div class="service-detail" id="detail-2">
-                    <p>ご予算や立地、利用シーンを考慮し、あなたに最適なお店を厳選してご提案します。</p>
-                </div>
-                <div class="service-detail" id="detail-3">
-                    <p>24時間365日対応のプロのコンシェルジュが、あらゆるご要望に即座に対応します。</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 実績 -->
-        <section class="achievement fade-in">
-            <h2>実績</h2>
-            <p>✔ 5000件以上のビジネスサポートを実施</p>
-            <p>✔ 企業の宴会・イベント手配において圧倒的な成功率</p>
-            <p>✔ 高評価のサービス提供で顧客満足度 98%</p>
-            <p>✔ 急な対応依頼にもスピーディーに対応</p>
-            <p>✔ 24時間365日、あなたのビジネスを支援</p>
-        </section>
-
-        <!-- サービス提供者情報 -->
-        <section class="provider fade-in">
-            <h2>サービス提供者</h2>
-            <div class="provider-box">
-                <img src="https://source.unsplash.com/100x100/?person,portrait" alt="サービス提供者">
-                <div class="provider-info">
-                    <h3>〇〇 〇〇</h3>
-                    <p>BizCompass メンバーとして、このサービスを提供しています。</p>
-                    <p>ビジネスサポートの実績が豊富で、多くの企業の成功を支援。</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- フッター -->
-    <footer>
-        <p class="footer-text">Copyright © 2025 Life Compass. All rights reserved.</p>
-    </footer>
+    <script>
+        gsap.to(".cta-button", {
+            y: -10,
+            duration: 0.6,
+            ease: "bounce.out",
+            repeat: -1,
+            yoyo: true,
+            delay: 1.5
+        });
+    </script>
 </body>
 </html>
