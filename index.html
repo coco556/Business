@@ -8,13 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- タイトルセクション（ページの一番上） -->
+    <!-- タイトルセクション（背景動画あり） -->
     <header>
-        <div class="hero-background"></div>
+        <video autoplay muted loop class="hero-video">
+            <source src="your-video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
         <h1>CASE 01</h1>
     </header>
 
-    <!-- メインコンテンツ（スクロールで表示） -->
+    <!-- メインコンテンツ -->
     <main>
         <section class="description fade-in">
             <h2>レストランなど飲食店の手配</h2>
@@ -26,7 +29,7 @@
         </section>
 
         <!-- サービス詳細（スクロールでスライドイン） -->
-        <section class="service-details">
+        <section class="service-details fade-in">
             <div class="service-left">
                 <div class="service-item">
                     <h3>スピーディーな対応</h3>
@@ -60,28 +63,24 @@
             <p>✔ 急な対応依頼にもスピーディーに対応</p>
             <p>✔ 24時間365日、あなたのビジネスを支援</p>
         </section>
+
+        <!-- サービス提供者情報 -->
+        <section class="provider fade-in">
+            <h2>サービス提供者</h2>
+            <div class="provider-box">
+                <img src="https://source.unsplash.com/100x100/?person,portrait" alt="サービス提供者">
+                <div class="provider-info">
+                    <h3>〇〇 〇〇</h3>
+                    <p>BizCompass メンバーとして、このサービスを提供しています。</p>
+                    <p>ビジネスサポートの実績が豊富で、多くの企業の成功を支援。</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- フッター -->
     <footer>
         <p class="footer-text">Copyright © 2025 Life Compass. All rights reserved.</p>
     </footer>
-
-    <script>
-        document.addEventListener("scroll", function() {
-            document.querySelector("main").classList.add("visible");
-
-            let serviceDetails = document.querySelectorAll(".service-detail");
-            let scrollPosition = window.scrollY + window.innerHeight;
-
-            serviceDetails.forEach((detail, index) => {
-                let position = detail.getBoundingClientRect().top + window.scrollY;
-                if (scrollPosition > position + 100) {
-                    detail.classList.add("active");
-                    detail.style.transitionDelay = `${index * 0.4}s`; // 順番にスライドイン
-                }
-            });
-        });
-    </script>
 </body>
 </html>
