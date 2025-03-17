@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: sans-serif;
-            background-color: #f2f2f2;
+            background: url('background.jpg') no-repeat center center/cover;
             margin: 0;
             padding: 0;
             text-align: center;
@@ -27,6 +27,17 @@
             color: white;
             padding: 30px;
             border-radius: 10px;
+        }
+        .section {
+            margin: 30px 0;
+        }
+        .popup-box {
+            background: #DFFFD6;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px auto;
+            width: 80%;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
         }
         .chat-box {
             background: #f9f9f9;
@@ -62,6 +73,14 @@
             margin-top: 20px;
             color: gray;
         }
+        .table-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 90%;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
@@ -72,26 +91,56 @@
             <button class="cta-button">コミュニティに参加</button>
         </div>
         
-        <div class="chat-box">
-            <p class="chat-bubble">案件を獲得したいです！</p>
-            <p class="chat-bubble">コミュニティで協業したい！</p>
-            <p class="chat-bubble">LP制作をお願いできますか？</p>
+        <div class="section">
+            <h2>BizCompassのコンセプト</h2>
+            <div class="popup-box">
+                <h3>ミッション</h3>
+                <p>「すべての経営者・個人事業主に、ビジネスの成長機会を。」</p>
+                <p>BizCompassは、フリーランス・個人事業主・中小企業経営者のための案件共有 & コミュニティです。</p>
+            </div>
+            <div class="popup-box">
+                <h3>バリュー</h3>
+                <p>「案件 × つながり × 収益の最大化」</p>
+                <ul>
+                    <li>✅ 案件を閲覧・投稿可能</li>
+                    <li>✅ 会員限定LPの制作</li>
+                    <li>✅ コミュニティでつながる</li>
+                    <li>✅ ストック収益制度</li>
+                </ul>
+            </div>
+            <div class="popup-box">
+                <h3>ビジョン</h3>
+                <p>「個人と企業が自由に成長できるビジネス環境をつくる」</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>BizCompassの強み</h2>
+            <ul>
+                <li>✅ コミュニティでの協業</li>
+                <li>✅ ストック収益制度</li>
+                <li>✅ 会員限定LP制作</li>
+            </ul>
+            <p>一般のビジネスマッチングサイト：マッチングや案件のチェックのみが殆ど</p>
+            <p><strong>BizCompass：LPの制作も行われるため、コミュニティ外でも集客力アップ</strong></p>
         </div>
 
+        <div class="table-container">
+            <h2>プラン別機能</h2>
+            <table border="1" width="100%">
+                <tr><th>機能</th><th>無料プラン</th><th>有料プラン</th></tr>
+                <tr><td>マッチング</td><td>○</td><td>○</td></tr>
+                <tr><td>案件閲覧</td><td>○</td><td>○</td></tr>
+                <tr><td>案件投稿</td><td>×</td><td>○</td></tr>
+                <tr><td>会員限定LP制作</td><td>×</td><td>○</td></tr>
+                <tr><td>ストック収益制度</td><td>×</td><td>○</td></tr>
+                <tr><td>コミュニティ優先参加</td><td>×</td><td>○</td></tr>
+            </table>
+        </div>
+        
         <div class="footer">
             <p>&copy; 2025 ライフコンパス. All Rights Reserved.</p>
         </div>
     </div>
-
-    <script>
-        gsap.to(".cta-button", {
-            y: -10,
-            duration: 0.6,
-            ease: "bounce.out",
-            repeat: -1,
-            yoyo: true,
-            delay: 1.5
-        });
-    </script>
 </body>
 </html>
