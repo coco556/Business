@@ -8,36 +8,57 @@ body {
     padding: 0;
 }
 
-/* タイトル（ページの一番上に配置） */
+/* タイトルセクション */
 header {
     position: relative;
     width: 100%;
-    height: 50vh;
+    height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
 }
 
-/* タイトル背景画像 */
-.hero-background {
+/* 背景動画 */
+.hero-video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 50vh;
-    background: url('https://sora.com/g/gen_01jpgph15dehmth9c9z14wah25') center/cover no-repeat;
-    opacity: 0.4;
-    z-index: -1;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* サービス詳細（左：特徴 / 右：詳細を左側と幅合わせ） */
+/* オーバーレイ（暗くする） */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* タイトル */
+h1 {
+    position: relative;
+    font-size: 3.5em;
+    font-weight: 700;
+    color: gold;
+    text-shadow: 3px 3px 5px rgba(255, 223, 0, 0.4);
+}
+
+/* 各セクションの間隔 */
+section {
+    padding: 80px 0;
+}
+
+/* サービス詳細（幅を統一） */
 .service-details {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 30px;
-    position: relative;
 }
 
 /* 左側：サービスのリスト */
@@ -46,35 +67,31 @@ header {
     text-align: left;
 }
 
-.service-item {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 8px;
-    margin: 10px auto;
-    width: 80%;
-    text-align: left;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-/* 右側：スクロールでスライドイン（左側と同じ幅に調整） */
+/* 右側：詳細を左と統一 */
 .service-right {
     width: 40%;
-    position: relative;
 }
 
-.service-detail {
-    opacity: 0;
-    transform: translateX(100%);
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 8px;
-    transition: all 0.6s ease-out;
+/* 詳細ボックスの統一 */
+.service-item, .service-detail {
     width: 80%;
-    margin: 0 auto;
+    margin: 10px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
 }
 
-.service-detail.active {
-    opacity: 1;
-    transform: translateX(0);
+/* 実績・提供者情報 */
+.achievement, .provider {
+    width: 80%;
+    margin: auto;
+}
+
+/* フッター */
+footer {
+    background: #1a1a1a;
+    padding: 20px;
+    font-size: 0.8em;
+    text-align: center;
+    color: #bbb;
 }
